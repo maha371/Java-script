@@ -72,3 +72,33 @@ const evenodd = arr7.reduce((acc,curr)=>{
 console.log(evenodd)
 
 
+function secondLargest(arr){
+    let largest = arr[0];
+    let secondLargest = -Infinity;
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] > largest){
+            secondLargest = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > secondLargest && arr[i] !== largest){
+            secondLargest = arr[i];
+        }
+    }
+    return secondLargest;
+}
+console.log(secondLargest([23,87,34,56,9]))
+
+function reverseArray(arr){
+    let left = 0;
+    let right = arr.length-1;
+    while(left < right){
+        temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp
+        left++;
+        right--;
+          
+    }
+  return arr;
+}
+console.log(reverseArray([20,43,3,422,53]))
