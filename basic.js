@@ -102,17 +102,3 @@ function reverseArray(arr){
   return arr;
 }
 console.log(reverseArray([20,43,3,422,53]))
-
-function isPalindrome(str){
-    let clean = '';
-    for (let char of str){
-        if(char != ' '){
-            clean += char.toLowerCase();
-        }
-    }
-    let reversed = clean.split("").reverse().join("");
-    return clean === reversed;
-}
-console.log(isPalindrome("Madam"));             
-console.log(isPalindrome("Never Odd Or Even"));  
-console.log(isPalindrome("Hello"));    
