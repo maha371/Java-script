@@ -7,6 +7,7 @@ reversed += string[i]
 }
 console.log(reversed)
 
+// Check if a string is a palindrome (ignore case and spaces).
 function isPalindrome(str){
     let clean = '';
     for (let char of str){
