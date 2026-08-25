@@ -34,3 +34,21 @@ function countVowels(str){
     return count;
 }
 console.log(countVowels("javascript"))
+
+//Find the largest and smallest number in an array without Math.max/min
+function findSmallAndLarge(arr){
+let largest = arr[0];
+let smallest = arr[0];
+for(let i=0;i<arr.length; i++){
+    if(arr[i]>largest){
+        largest = arr[i];
+    }
+    if(arr[i]<smallest){
+        smallest = arr[i];
+    }
+}
+
+return [smallest, largest];
+
+}
+console.log(findSmallAndLarge([9,45,3,48,1,47]))
