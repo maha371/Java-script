@@ -74,3 +74,21 @@ function printFizzBuzz() {
 }
 
 printFizzBuzz();
+
+// Logical: Remove duplicates from an array (3 ways: Set, filter+indexOf, reduce).
+function removeDuplicate(arr){
+let uniquearr = [...new Set(arr)]
+console.log(uniquearr)
+const result = arr.filter((item, index)=>{
+    return arr.indexOf(item) === index;
+})
+console.log(result)
+arr.reduce((result, current)=>{
+if(!result.includes(current)){
+    result.push(current)
+}
+return result;
+},[])
+console.log(result)
+}
+removeDuplicate([1, 2, 3, 2, 4, 5, 1, 3, 6, 5]);
