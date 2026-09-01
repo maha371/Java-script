@@ -92,3 +92,20 @@ return result;
 console.log(result)
 }
 removeDuplicate([1, 2, 3, 2, 4, 5, 1, 3, 6, 5]);
+
+//Find the first non-repeating character in a string.
+function firstUniqueCharacter(str){
+    let freq = {};
+    for(let char of str){
+        freq[char] = freq[char] ? freq[char] + 1 : 1;
+    }
+    // return freq;
+    for(let char of str){
+        if(freq[char] === 1){
+            return char
+        }
+       
+    }
+    return null;
+}
+console.log(firstUniqueCharacter("swiss"))
