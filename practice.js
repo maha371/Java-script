@@ -142,3 +142,15 @@ const map = new Map();
 console.log(twoSum([2,7,11,15], 9)); // [0,1]
 console.log(twoSum([3,2,4], 6)); // [1,2]
 console.log(twoSum([3,3], 6)); // [0,1]
+
+//find the largest number in an array
+function largestNumber(arr){
+  let max = arr[0];
+  for(let i=0; i<arr.length-1;i++){
+    if(arr[i]> max){
+      max = arr[i];
+    }
+  }
+  return max;
+}
+console.log(largestNumber([3,64,89,1,-23]))
