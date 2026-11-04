@@ -154,3 +154,30 @@ function largestNumber(arr){
   return max;
 }
 console.log(largestNumber([3,64,89,1,-23]))
+//valid anagram
+function isAnagram(s, t) {
+    // If lengths are different, they cannot be anagrams
+    if (s.length !== t.length) return false;
+
+    const charCount = {};
+
+    // Count characters in the first string
+    for (let char of s) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    // Decrement counts using the second string
+    for (let char of t) {
+        // If the character doesn't exist or its count drops below 0
+        if (!charCount[char]) {
+            return false;
+        }
+        charCount[char]--;
+    }
+
+    return true;
+}
+
+// Test cases
+console.log(isAnagram("anagram", "nagaram")); // true
+console.log(isAnagram("rat", "car"));         // false
