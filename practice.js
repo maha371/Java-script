@@ -181,3 +181,18 @@ function isAnagram(s, t) {
 // Test cases
 console.log(isAnagram("anagram", "nagaram")); // true
 console.log(isAnagram("rat", "car"));         // false
+//Find duplicate elements in an array
+function findDuplicates(arr){
+const seen =  new Set();
+  const duplicate = new Set();
+  for(let item of arr){
+    if(seen.has(item)){
+      duplicate.add(item)
+    }
+    else{
+      seen.add(item);
+    }
+  }
+  return [...duplicate];
+}
+console.log(findDuplicates([1, 2, 3, 2, 4, 1, 5]))
