@@ -212,3 +212,25 @@ function containsDuplicate(nums){
 
 console.log(containsDuplicate([1, 2, 3, 1])); // true
 console.log(containsDuplicate([1, 2, 3, 4])); // false
+//Best time to buy and sell stocks
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let minValue = prices[0];
+    let sellPrice = 0;
+    for(let i=1;i<prices.length;i++){
+if(prices[i] < minValue ){
+    minValue = prices[i];
+}
+else{
+    profit = prices[i] - minValue;
+    if(profit > sellPrice){
+        sellPrice = profit;
+    }
+}
+      
+    }
+return sellPrice;
+};
