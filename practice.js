@@ -250,3 +250,17 @@ var maxSubArray = function(nums) {
     }
     return maximum;
 };
+function moveZeros(arr){
+  let sortedArr = [];
+  let zeros = [];
+  for(let i = 0; i< arr.length; i++){
+    if(arr[i] != 0){
+    sortedArr.push(arr[i]);
+  }
+    else zeros.push(arr[i]);
+  
+}
+  let final = [...sortedArr, ...zeros]
+  return final;
+}
+console.log(moveZeros([0,1,0,3,12]));
