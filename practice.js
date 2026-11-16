@@ -264,3 +264,40 @@ function moveZeros(arr){
   return final;
 }
 console.log(moveZeros([0,1,0,3,12]));
+
+var isPalindrome = function(s) {
+let num = s.toString();
+let reversed = num.split('').reverse().join('');
+  let palindrome = num == reversed;
+  return palindrome;
+  };
+console.log(isPalindrome(121));
+
+var isPalindrome = function(s) {
+    let cleaned = s.toLowerCase().replace(/[^a-z0-9]/g,'');
+  let isPalindrome = cleaned = cleaned.split("").reverse().join('');
+  return isPalindrome;
+};
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var validPalindrome = function(s) {
+    let left = 0;
+    let right = s.length -1;
+    while(left<right){
+        if(s[left] != s[right]){
+let skipLeft = s.slice(0,left) + s.slice(left+1);
+let skipRight = s.slice(0,right) + s.slice(right+1)
+return isPalindrome(skipLeft) || isPalindrome(skipRight);
+        }
+        left ++;
+        right --;
+    }
+    return true;
+};
+function isPalindrome(str){
+    return str == str.split('').reverse().join('');
+}
+console.log(validPalindrome("aba"));
